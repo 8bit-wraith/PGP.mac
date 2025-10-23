@@ -245,7 +245,20 @@ Contributions are welcome! This project is built with love by Hue & Aye, but we'
 
 ## 📝 License
 
-MIT License - see [LICENSE](LICENSE) file for details
+PGP.mac is released under the **MIT License** - see [LICENSE](LICENSE) file for details.
+
+### Important Licensing Note
+
+PGP.mac itself is **free and open source** (MIT License) for both personal and commercial use.
+
+**However**, PGP.mac depends on [ObjectivePGP](https://github.com/krzyzanowskim/ObjectivePGP), which uses a **dual license**:
+- ✅ **Free for non-commercial use**
+- 💰 **Requires commercial license for commercial use**
+
+If you plan to use PGP.mac in a commercial product, you'll need to obtain a commercial license for ObjectivePGP from its author:
+- **Contact**: Marcin Krzyżanowski (marcin@krzyzanowskim.com)
+
+For personal, educational, or non-commercial use, no additional licenses are required! 🎉
 
 ## 💬 Contact
 

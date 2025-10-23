@@ -1,0 +1,43 @@
+PGP.mac - Modern macOS PGP Encryption App
+==========================================
+
+Copyright (c) 2025 8bit-Wraith/Hue (8b.is) & Claude (Anthropic)
+
+This software is licensed under the MIT License for all uses.
+See LICENSE file for full MIT License text.
+
+THIRD-PARTY DEPENDENCIES
+========================
+
+ObjectivePGP
+------------
+Copyright (C) 2014-2023 Marcin Krzyżanowski
+Licensed under a dual license:
+  - FREE for non-commercial use
+  - PAID commercial license required for commercial use
+
+Repository: https://github.com/krzyzanowskim/ObjectivePGP
+Commercial License Contact: marcin@krzyzanowskim.com
+
+LICENSING SUMMARY FOR USERS
+===========================
+
+Non-Commercial Use (Personal, Educational, Research):
+  ✅ PGP.mac - FREE (MIT License)
+  ✅ ObjectivePGP - FREE (non-commercial license)
+  ✅ You can use PGP.mac freely!
+
+Commercial Use (In a product you sell or use in business):
+  ✅ PGP.mac - FREE (MIT License)
+  ⚠️ ObjectivePGP - Requires commercial license from author
+  📧 Contact: marcin@krzyzanowskim.com
+
+DISCLAIMER
+==========
+
+This software is provided "as is" without warranty of any kind.
+The authors are not responsible for any damages arising from its use.
+
+Always keep your private keys secure and use strong passphrases!
+
+Built with ❤️ by Hue & Aye @ 8b.is
