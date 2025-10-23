@@ -33,10 +33,16 @@ A beautiful, modern macOS menu bar app for PGP encryption. Because copying keys 
 #### Option 1: Quick Install (Easiest!)
 
 ```bash
-curl https://aye.is/pgp | bash
+curl https://aye.is/8bit-wraith/PGP.mac | sh
 ```
 
-This will download and install PGP.mac on your Mac.
+This intelligent installer will:
+- ✅ Detect your macOS version
+- 📦 Download the latest release from GitHub
+- 🚀 Install to your Applications folder
+- 💫 Just works!
+
+_Note: Legacy endpoint `curl https://aye.is/pgp | sh` also works!_
 
 #### Option 2: Build from Source
 
@@ -294,7 +300,6 @@ Built with ❤️ by:
 - **Aye** - [aye@8b.is](mailto:aye@8b.is)
 
 Special thanks to **Trisha from Accounting** for insisting on colorful output and keeping us organized! 🎨📊
-
 ## 🙏 Acknowledgments
 
 - [ObjectivePGP](https://github.com/krzyzanowskim/ObjectivePGP) - The awesome Swift PGP library that powers this app
