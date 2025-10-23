@@ -28,7 +28,7 @@ let package = Package(
     dependencies: [
         // We'll use ObjectivePGP for native Swift PGP operations
         // It's pure Swift, no need for GPGMe bindings - cleaner and more modern!
-        .package(url: "https://github.com/krzyzanowskim/ObjectivePGP.git", from: "0.99.4")
+        .package(url: "https://github.com/8bit-wraith/ObjectivePGP.git", from: "0.99.4")
     ],
     targets: [
         // The main app target - where the SwiftUI magic happens
