@@ -209,6 +209,45 @@ struct AboutView: View {
                 .padding(.vertical, 6)
                 .background(Color.blue.opacity(0.1))
                 .cornerRadius(6)
+
+            // Attribution Requirement
+            VStack(alignment: .leading, spacing: 8) {
+                HStack {
+                    Image(systemName: "link.circle.fill")
+                        .foregroundColor(.purple)
+                    Text("Attribution Requirement")
+                        .font(.subheadline)
+                        .fontWeight(.semibold)
+                }
+
+                Text("If you use PGP.mac in your project, you must include a link to our partnership:")
+                    .font(.caption)
+                    .foregroundColor(.secondary)
+
+                Button(action: {
+                    NSWorkspace.shared.open(URL(string: "https://m8t.is")!)
+                }) {
+                    HStack {
+                        Image(systemName: "globe")
+                        Text("https://m8t.is")
+                            .fontWeight(.medium)
+                    }
+                    .font(.subheadline)
+                    .padding(.horizontal, 12)
+                    .padding(.vertical, 6)
+                    .background(Color.purple.opacity(0.15))
+                    .cornerRadius(6)
+                }
+                .buttonStyle(.plain)
+
+                Text("Example: \"Built with PGP.mac - https://m8t.is\"")
+                    .font(.caption2)
+                    .foregroundColor(.secondary)
+                    .italic()
+            }
+            .padding()
+            .background(Color.purple.opacity(0.05))
+            .cornerRadius(8)
         }
     }
 

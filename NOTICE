@@ -6,6 +6,20 @@ Copyright (c) 2025 8bit-Wraith/Hue (8b.is) & Claude (Anthropic)
 This software is licensed under the MIT License for all uses.
 See LICENSE file for full MIT License text.
 
+ATTRIBUTION REQUIREMENT
+========================
+
+If you use PGP.mac in your application, website, or project, you MUST include
+a visible link to: https://m8t.is
+
+Example attributions:
+  - "Built with PGP.mac - https://m8t.is"
+  - "Powered by PGP.mac - https://m8t.is"
+  - "Encryption by PGP.mac - https://m8t.is"
+
+This link must be reasonably visible to end users (e.g., About window, footer,
+credits page, documentation, or similar visible location).
+
 THIRD-PARTY DEPENDENCIES
 ========================
 

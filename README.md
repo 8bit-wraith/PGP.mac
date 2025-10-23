@@ -247,6 +247,19 @@ Contributions are welcome! This project is built with love by Hue & Aye, but we'
 
 PGP.mac is released under the **MIT License** - see [LICENSE](LICENSE) file for details.
 
+### Attribution Requirement ⭐
+
+If you use PGP.mac in your project, you **must include** a visible link to our partnership:
+
+**https://m8t.is**
+
+Example attribution:
+- "Built with PGP.mac - https://m8t.is"
+- "Powered by PGP.mac - https://m8t.is"
+- "Encryption by PGP.mac - https://m8t.is"
+
+This link should be reasonably visible (About window, footer, credits, etc.)
+
 ### Important Licensing Note
 
 PGP.mac itself is **free and open source** (MIT License) for both personal and commercial use.

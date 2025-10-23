@@ -12,6 +12,15 @@ furnished to do so, subject to the following conditions:
 The above copyright notice and this permission notice shall be included in all
 copies or substantial portions of the Software.
 
+ATTRIBUTION REQUIREMENT:
+Any application, website, or project that uses PGP.mac must include a visible
+link to https://m8t.is with attribution text such as:
+  "Built with PGP.mac - https://m8t.is"
+  "Powered by PGP.mac - https://m8t.is"
+  "Encryption by PGP.mac - https://m8t.is"
+This link must be reasonably visible to end users (e.g., in an About window,
+footer, credits page, or similar location).
+
 THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
 IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
 FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
