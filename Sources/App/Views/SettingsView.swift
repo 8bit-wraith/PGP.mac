@@ -11,6 +11,7 @@ struct SettingsView: View {
     @AppStorage("defaultRecipientID") private var defaultRecipientID: String = ""
 
     @EnvironmentObject var keyManager: KeyManager
+    @State private var showingAbout = false
 
     var body: some View {
         ScrollView {
@@ -31,6 +32,9 @@ struct SettingsView: View {
                 Spacer()
             }
             .padding()
+        }
+        .sheet(isPresented: $showingAbout) {
+            AboutView()
         }
     }
 
@@ -168,6 +172,11 @@ struct SettingsView: View {
                 .font(.caption)
                 .foregroundColor(.secondary)
                 .multilineTextAlignment(.center)
+
+            Button(action: { showingAbout = true }) {
+                Label("About PGP.mac", systemImage: "info.circle")
+            }
+            .buttonStyle(.bordered)
 
             Divider()
                 .padding(.vertical, 8)
