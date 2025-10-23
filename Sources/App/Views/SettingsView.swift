@@ -1,5 +1,5 @@
-import SwiftUI
 import PGPCore
+import SwiftUI
 
 /// Settings and hotkey configuration
 /// Make PGP.mac work exactly how you want!

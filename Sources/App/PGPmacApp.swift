@@ -1,6 +1,6 @@
-import SwiftUI
 import AppKit
 import PGPCore
+import SwiftUI
 
 /// PGP.mac - The coolest menu bar app for encryption!
 /// Living in your menu bar, ready to encrypt at a moment's notice
@@ -37,7 +37,7 @@ class AppDelegate: NSObject, NSApplicationDelegate, ObservableObject {
     private var hotkeyManager: HotkeyManager?
 
     /// Called when the app launches - let's set up shop!
-    func applicationDidFinishLaunching(_ notification: Notification) {
+    func applicationDidFinishLaunching(_: Notification) {
         // Create the menu bar item with a fixed length
         statusItem = NSStatusBar.system.statusItem(withLength: NSStatusItem.squareLength)
 
@@ -45,7 +45,7 @@ class AppDelegate: NSObject, NSApplicationDelegate, ObservableObject {
         if let button = statusItem.button {
             button.image = NSImage(
                 systemSymbolName: "lock.shield.fill",
-                accessibilityDescription: "PGP.mac"
+                accessibilityDescription: "PGP.mac",
             )
             button.action = #selector(togglePopover)
             button.target = self
@@ -54,10 +54,10 @@ class AppDelegate: NSObject, NSApplicationDelegate, ObservableObject {
         // Create the popover that will show our UI
         popover = NSPopover()
         popover.contentSize = NSSize(width: 400, height: 600)
-        popover.behavior = .transient  // Closes when you click outside
+        popover.behavior = .transient // Closes when you click outside
         popover.contentViewController = NSHostingController(
             rootView: ContentView()
-                .environmentObject(keyManager)
+                .environmentObject(keyManager),
         )
 
         // Make sure we can quit properly
@@ -81,13 +81,13 @@ class AppDelegate: NSObject, NSApplicationDelegate, ObservableObject {
     }
 
     /// Handle app termination gracefully
-    func applicationWillTerminate(_ notification: Notification) {
+    func applicationWillTerminate(_: Notification) {
         // Save any pending changes
         // KeyManager auto-saves, so we're good!
     }
 
     /// Support quitting via Cmd+Q
-    func applicationShouldTerminateAfterLastWindowClosed(_ sender: NSApplication) -> Bool {
-        return false  // We're a menu bar app, no windows to close!
+    func applicationShouldTerminateAfterLastWindowClosed(_: NSApplication) -> Bool {
+        false // We're a menu bar app, no windows to close!
     }
 }

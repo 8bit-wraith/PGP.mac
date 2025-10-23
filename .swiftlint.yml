@@ -1,0 +1,43 @@
+# SwiftLint Configuration for PGP.mac
+# Partners: Hue & Aye @ 8b.is
+
+# Paths to exclude from linting
+excluded:
+  - .build
+  - .git
+
+# Disable specific rules that conflict with SwiftUI patterns
+disabled_rules:
+  - multiple_closures_with_trailing_closure  # SwiftUI uses this pattern extensively
+
+# Line length (we've fixed most but keeping it reasonable)
+line_length:
+  warning: 120
+  error: 150
+  ignores_comments: true
+
+# Function body length
+function_body_length:
+  warning: 60
+  error: 100
+
+# Type body length
+type_body_length:
+  warning: 300
+  error: 500
+
+# Opt-in rules
+opt_in_rules:
+  - empty_count
+  - explicit_init
+  - first_where
+  - sorted_first_last
+
+# Custom rules
+custom_rules:
+  # Encourage helpful comments
+  no_empty_comments:
+    name: "No Empty Comments"
+    regex: '^\s*//\s*$'
+    message: "Comments should be meaningful"
+    severity: warning

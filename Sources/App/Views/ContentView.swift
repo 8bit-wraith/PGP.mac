@@ -1,5 +1,5 @@
-import SwiftUI
 import PGPCore
+import SwiftUI
 
 /// The main view of PGP.mac
 /// Your command center for all things encryption!
@@ -14,10 +14,10 @@ struct ContentView: View {
 
     /// Tabs available in the app
     enum Tab {
-        case keys       // Manage your key collection
-        case encrypt    // Encrypt messages
-        case decrypt    // Decrypt messages
-        case settings   // App settings & hotkeys
+        case keys // Manage your key collection
+        case encrypt // Encrypt messages
+        case decrypt // Decrypt messages
+        case settings // App settings & hotkeys
     }
 
     var body: some View {
@@ -99,7 +99,7 @@ struct ContentView: View {
             .background(
                 selectedTab == tab ?
                     Color.blue.opacity(0.2) :
-                    Color.clear
+                    Color.clear,
             )
             .cornerRadius(8)
         }

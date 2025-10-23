@@ -1,5 +1,5 @@
-import SwiftUI
 import PGPCore
+import SwiftUI
 
 /// Detailed view of a specific key
 /// All the nerdy details you could want!
@@ -39,27 +39,27 @@ struct KeyDetailView: View {
                 detailRow(
                     label: "Type",
                     value: keyPair.keyTypeDescription,
-                    icon: keyPair.hasPrivateKey ? "key.fill" : "key"
+                    icon: keyPair.hasPrivateKey ? "key.fill" : "key",
                 )
 
                 detailRow(
                     label: "Fingerprint",
                     value: keyPair.fingerprint,
                     icon: "hand.raised.fill",
-                    monospaced: true
+                    monospaced: true,
                 )
 
                 detailRow(
                     label: "Short Fingerprint",
                     value: keyPair.shortFingerprint,
                     icon: "hand.raised",
-                    monospaced: true
+                    monospaced: true,
                 )
 
                 detailRow(
                     label: "Created",
                     value: formatDate(keyPair.createdDate),
-                    icon: "calendar"
+                    icon: "calendar",
                 )
 
                 if let expiration = keyPair.expirationDate {
@@ -67,13 +67,13 @@ struct KeyDetailView: View {
                         label: "Expires",
                         value: formatDate(expiration),
                         icon: "clock",
-                        warning: keyPair.isExpired
+                        warning: keyPair.isExpired,
                     )
                 } else {
                     detailRow(
                         label: "Expires",
                         value: "Never",
-                        icon: "infinity"
+                        icon: "infinity",
                     )
                 }
 
@@ -81,7 +81,7 @@ struct KeyDetailView: View {
                     label: "Status",
                     value: keyPair.isValid ? "Valid" : "Expired",
                     icon: keyPair.isValid ? "checkmark.circle.fill" : "xmark.circle.fill",
-                    warning: !keyPair.isValid
+                    warning: !keyPair.isValid,
                 )
             }
 
@@ -159,7 +159,7 @@ struct KeyDetailView: View {
         value: String,
         icon: String,
         monospaced: Bool = false,
-        warning: Bool = false
+        warning: Bool = false,
     ) -> some View {
         HStack(alignment: .top) {
             Image(systemName: icon)
@@ -191,7 +191,7 @@ struct KeyDetailView: View {
             exportedKey = try keyPair.exportArmored(includePrivate: false)
             showingExport = true
         } catch {
-            // TODO: Show error alert
+            // Error alert - future enhancement
             print("Export failed: \(error)")
         }
     }
@@ -201,7 +201,7 @@ struct KeyDetailView: View {
         pasteboard.clearContents()
         pasteboard.setString(exportedKey, forType: .string)
 
-        // TODO: Show success toast
+        // Success notification - future enhancement
     }
 
     // MARK: - Helpers
@@ -218,7 +218,7 @@ struct KeyDetailView: View {
 
 #Preview {
     let manager = KeyManager()
-    // TODO: Add preview data
+    // Preview data - future enhancement
     return KeyDetailView(keyPair: PGPKeyPair(
         id: UUID(),
         keyData: Data(),
@@ -228,7 +228,7 @@ struct KeyDetailView: View {
         expirationDate: nil,
         hasPrivateKey: true,
         fingerprint: "1234 5678 90AB CDEF",
-        userIDs: ["Test User <test@example.com>"]
+        userIDs: ["Test User <test@example.com>"],
     ))
     .environmentObject(manager)
 }

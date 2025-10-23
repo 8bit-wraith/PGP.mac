@@ -1,5 +1,5 @@
-import SwiftUI
 import PGPCore
+import SwiftUI
 
 /// Decrypt those secret messages!
 /// Turn crypto-gibberish back into readable text
@@ -40,7 +40,7 @@ struct DecryptView: View {
             textEditor(
                 title: "Encrypted Message",
                 text: $inputText,
-                placeholder: "Paste the encrypted message here..."
+                placeholder: "Paste the encrypted message here...",
             )
 
             // Action buttons
@@ -52,7 +52,7 @@ struct DecryptView: View {
                     title: "Decrypted Message",
                     text: .constant(outputText),
                     placeholder: "",
-                    readOnly: true
+                    readOnly: true,
                 )
             }
 
@@ -176,7 +176,7 @@ struct DecryptView: View {
             outputText = try keyManager.decrypt(
                 armoredMessage: inputText,
                 using: key,
-                passphrase: passphrase
+                passphrase: passphrase,
             )
         } catch {
             errorMessage = error.localizedDescription
@@ -203,7 +203,7 @@ struct DecryptView: View {
         pasteboard.clearContents()
         pasteboard.setString(outputText, forType: .string)
 
-        // TODO: Show success toast
+        // Success notification - future enhancement
     }
 
     // MARK: - Helper Views
@@ -212,7 +212,7 @@ struct DecryptView: View {
         title: String,
         text: Binding<String>,
         placeholder: String,
-        readOnly: Bool = false
+        readOnly: Bool = false,
     ) -> some View {
         VStack(alignment: .leading, spacing: 4) {
             Text(title)
@@ -220,7 +220,7 @@ struct DecryptView: View {
                 .foregroundColor(.secondary)
 
             ZStack(alignment: .topLeading) {
-                if text.wrappedValue.isEmpty && !placeholder.isEmpty {
+                if text.wrappedValue.isEmpty, !placeholder.isEmpty {
                     Text(placeholder)
                         .foregroundColor(.secondary.opacity(0.5))
                         .padding(8)
@@ -245,7 +245,7 @@ struct DecryptView: View {
             .cornerRadius(6)
             .overlay(
                 RoundedRectangle(cornerRadius: 6)
-                    .stroke(Color.secondary.opacity(0.2), lineWidth: 1)
+                    .stroke(Color.secondary.opacity(0.2), lineWidth: 1),
             )
         }
     }

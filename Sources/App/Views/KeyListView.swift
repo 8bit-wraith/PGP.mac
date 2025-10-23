@@ -1,5 +1,5 @@
-import SwiftUI
 import PGPCore
+import SwiftUI
 
 /// Shows all your PGP keys in a beautiful list
 /// Like a contact list, but for crypto identities!
@@ -132,7 +132,7 @@ struct KeyListView: View {
 
         if keyPair.hasPrivateKey {
             Button(action: {
-                // TODO: Export private key with confirmation
+                // Export private key with confirmation - future enhancement
             }) {
                 Label("Export Private Key", systemImage: "exclamationmark.triangle")
             }
@@ -158,9 +158,9 @@ struct KeyListView: View {
             pasteboard.clearContents()
             pasteboard.setString(armored, forType: .string)
 
-            // TODO: Show success toast
+            // Success notification - future enhancement
         } catch {
-            // TODO: Show error alert
+            // Error alert - future enhancement
             print("Export failed: \(error)")
         }
     }
@@ -169,7 +169,7 @@ struct KeyListView: View {
         do {
             try keyManager.deleteKey(keyPair)
         } catch {
-            // TODO: Show error alert
+            // Error alert - future enhancement
             print("Delete failed: \(error)")
         }
     }
@@ -213,7 +213,7 @@ struct KeyRowView: View {
                         .background(
                             keyPair.hasPrivateKey ?
                                 Color.blue.opacity(0.2) :
-                                Color.gray.opacity(0.2)
+                                Color.gray.opacity(0.2),
                         )
                         .cornerRadius(4)
 

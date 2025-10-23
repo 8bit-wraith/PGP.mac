@@ -1,5 +1,5 @@
-import SwiftUI
 import PGPCore
+import SwiftUI
 
 /// Generate a brand new PGP key pair
 /// Your fresh crypto identity awaits!
@@ -146,22 +146,22 @@ struct GenerateKeyView: View {
 
     private var isFormValid: Bool {
         !name.isEmpty &&
-        !email.isEmpty &&
-        !passphrase.isEmpty &&
-        passphrase == confirmPassphrase &&
-        email.contains("@")
+            !email.isEmpty &&
+            !passphrase.isEmpty &&
+            passphrase == confirmPassphrase &&
+            email.contains("@")
     }
 
     private var keySizeDescription: String {
         switch keySize {
         case 2048:
-            return "Fast, good for most uses"
+            "Fast, good for most uses"
         case 3072:
-            return "Balanced security and performance"
+            "Balanced security and performance"
         case 4096:
-            return "Maximum security (recommended)"
+            "Maximum security (recommended)"
         default:
-            return ""
+            ""
         }
     }
 
@@ -189,7 +189,7 @@ struct GenerateKeyView: View {
                     name: name,
                     email: email,
                     passphrase: passphrase,
-                    keySize: keySize
+                    keySize: keySize,
                 )
 
                 DispatchQueue.main.async {

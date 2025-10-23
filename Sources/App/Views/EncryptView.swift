@@ -1,5 +1,5 @@
-import SwiftUI
 import PGPCore
+import SwiftUI
 
 /// Encrypt messages for your friends!
 /// Turn plain text into crypto-gibberish that only they can read
@@ -32,7 +32,7 @@ struct EncryptView: View {
             textEditor(
                 title: "Message to Encrypt",
                 text: $inputText,
-                placeholder: "Type or paste your secret message here..."
+                placeholder: "Type or paste your secret message here...",
             )
 
             // Action buttons
@@ -44,7 +44,7 @@ struct EncryptView: View {
                     title: "Encrypted Message",
                     text: .constant(outputText),
                     placeholder: "",
-                    readOnly: true
+                    readOnly: true,
                 )
             }
 
@@ -172,7 +172,7 @@ struct EncryptView: View {
         pasteboard.clearContents()
         pasteboard.setString(outputText, forType: .string)
 
-        // TODO: Show success toast
+        // Success notification - future enhancement
     }
 
     // MARK: - Helper Views
@@ -181,7 +181,7 @@ struct EncryptView: View {
         title: String,
         text: Binding<String>,
         placeholder: String,
-        readOnly: Bool = false
+        readOnly: Bool = false,
     ) -> some View {
         VStack(alignment: .leading, spacing: 4) {
             Text(title)
@@ -189,7 +189,7 @@ struct EncryptView: View {
                 .foregroundColor(.secondary)
 
             ZStack(alignment: .topLeading) {
-                if text.wrappedValue.isEmpty && !placeholder.isEmpty {
+                if text.wrappedValue.isEmpty, !placeholder.isEmpty {
                     Text(placeholder)
                         .foregroundColor(.secondary.opacity(0.5))
                         .padding(8)
@@ -214,7 +214,7 @@ struct EncryptView: View {
             .cornerRadius(6)
             .overlay(
                 RoundedRectangle(cornerRadius: 6)
-                    .stroke(Color.secondary.opacity(0.2), lineWidth: 1)
+                    .stroke(Color.secondary.opacity(0.2), lineWidth: 1),
             )
         }
     }

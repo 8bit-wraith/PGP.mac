@@ -1,9 +1,9 @@
 // swift-tools-version: 5.9
 // The swift-tools-version declares the minimum version of Swift required to build this package.
-//
+
 // PGP.mac - Making encryption sexy again!
 // Because copying keys between apps shouldn't feel like performing surgery
-//
+
 // Partners: Hue & Aye @ 8b.is
 
 import PackageDescription
@@ -28,7 +28,7 @@ let package = Package(
     dependencies: [
         // We'll use ObjectivePGP for native Swift PGP operations
         // It's pure Swift, no need for GPGMe bindings - cleaner and more modern!
-        .package(url: "https://github.com/krzyzanowskim/ObjectivePGP.git", from: "0.99.4"),
+        .package(url: "https://github.com/8bit-wraith/ObjectivePGP.git", from: "0.99.4")
     ],
     targets: [
         // The main app target - where the SwiftUI magic happens

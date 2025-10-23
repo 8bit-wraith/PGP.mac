@@ -1,5 +1,5 @@
-import SwiftUI
 import PGPCore
+import SwiftUI
 
 /// Import a PGP key
 /// Paste it, drop it, or pick a file - we handle it all!
@@ -109,7 +109,7 @@ struct ImportKeyView: View {
         let panel = NSOpenPanel()
         panel.allowsMultipleSelection = false
         panel.canChooseDirectories = false
-        panel.allowedContentTypes = [.data]  // Allow all files
+        panel.allowedContentTypes = [.data] // Allow all files
         panel.message = "Select a PGP key file"
 
         if panel.runModal() == .OK, let url = panel.url {
