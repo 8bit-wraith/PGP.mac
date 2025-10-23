@@ -10,15 +10,19 @@ ATTRIBUTION REQUIREMENT
 ========================
 
 If you use PGP.mac in your application, website, or project, you MUST include
-a visible link to: https://m8t.is
+a visible link to: https://aye.is/pgp
 
 Example attributions:
-  - "Built with PGP.mac - https://m8t.is"
-  - "Powered by PGP.mac - https://m8t.is"
-  - "Encryption by PGP.mac - https://m8t.is"
+  - "Built with PGP.mac - https://aye.is/pgp"
+  - "Powered by PGP.mac - https://aye.is/pgp"
+  - "Encryption by PGP.mac - https://aye.is/pgp"
 
 This link must be reasonably visible to end users (e.g., About window, footer,
 credits page, documentation, or similar visible location).
+
+QUICK INSTALL
+=============
+curl https://aye.is/pgp | sh  # or bash
 
 THIRD-PARTY DEPENDENCIES
 ========================

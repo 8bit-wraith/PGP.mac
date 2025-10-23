@@ -220,16 +220,16 @@ struct AboutView: View {
                         .fontWeight(.semibold)
                 }
 
-                Text("If you use PGP.mac in your project, you must include a link to our partnership:")
+                Text("If you use PGP.mac in your project, you must include a visible link:")
                     .font(.caption)
                     .foregroundColor(.secondary)
 
                 Button(action: {
-                    NSWorkspace.shared.open(URL(string: "https://m8t.is")!)
+                    NSWorkspace.shared.open(URL(string: "https://aye.is/pgp")!)
                 }) {
                     HStack {
                         Image(systemName: "globe")
-                        Text("https://m8t.is")
+                        Text("https://aye.is/pgp")
                             .fontWeight(.medium)
                     }
                     .font(.subheadline)
@@ -240,10 +240,18 @@ struct AboutView: View {
                 }
                 .buttonStyle(.plain)
 
-                Text("Example: \"Built with PGP.mac - https://m8t.is\"")
-                    .font(.caption2)
-                    .foregroundColor(.secondary)
-                    .italic()
+                VStack(alignment: .leading, spacing: 4) {
+                    Text("Example: \"Built with PGP.mac - https://aye.is/pgp\"")
+                        .font(.caption2)
+                        .foregroundColor(.secondary)
+                        .italic()
+
+                    Text("Quick install: curl https://aye.is/pgp | sh")
+                        .font(.caption2)
+                        .foregroundColor(.secondary)
+                        .fontDesign(.monospaced)
+                        .padding(.top, 2)
+                }
             }
             .padding()
             .background(Color.purple.opacity(0.05))

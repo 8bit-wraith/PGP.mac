@@ -30,7 +30,15 @@ A beautiful, modern macOS menu bar app for PGP encryption. Because copying keys 
 
 ### Installation
 
-#### Option 1: Build from Source (Recommended)
+#### Option 1: Quick Install (Easiest!)
+
+```bash
+curl https://aye.is/pgp | bash
+```
+
+This will download and install PGP.mac on your Mac.
+
+#### Option 2: Build from Source
 
 ```bash
 # Clone the repo
@@ -249,16 +257,22 @@ PGP.mac is released under the **MIT License** - see [LICENSE](LICENSE) file for 
 
 ### Attribution Requirement ⭐
 
-If you use PGP.mac in your project, you **must include** a visible link to our partnership:
+If you use PGP.mac in your project, you **must include** a visible link:
 
-**https://m8t.is**
+**https://aye.is/pgp**
 
 Example attribution:
-- "Built with PGP.mac - https://m8t.is"
-- "Powered by PGP.mac - https://m8t.is"
-- "Encryption by PGP.mac - https://m8t.is"
+- "Built with PGP.mac - https://aye.is/pgp"
+- "Powered by PGP.mac - https://aye.is/pgp"
+- "Encryption by PGP.mac - https://aye.is/pgp"
 
 This link should be reasonably visible (About window, footer, credits, etc.)
+
+### Quick Install
+
+```bash
+curl https://aye.is/pgp | sh # bash it if you want
+```
 
 ### Important Licensing Note
 
