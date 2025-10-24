@@ -102,10 +102,9 @@ struct DecryptView: View {
                 Picker("Your Key", selection: $selectedKey) {
                     Text("Select your key...").tag(nil as PGPKeyPair?)
                     ForEach(keyManager.signingKeys) { key in
-                        HStack {
-                            Text(key.statusEmoji)
-                            Text(key.nickname)
-                        }.tag(key as PGPKeyPair?)
+                        // Show emoji + name as a single text for proper display in Picker
+                        Text("\(key.statusEmoji) \(key.nickname)")
+                            .tag(key as PGPKeyPair?)
                     }
                 }
                 .labelsHidden()
@@ -129,30 +128,38 @@ struct DecryptView: View {
     // MARK: - Action Buttons
 
     private var actionButtons: some View {
-        HStack {
+        HStack(spacing: 8) {
             Button(action: clearAll) {
                 Label("Clear", systemImage: "xmark.circle")
+                    .frame(minWidth: 80)
             }
             .buttonStyle(.bordered)
+            .controlSize(.regular)
 
             Spacer()
 
             Button(action: pasteFromClipboard) {
                 Label("Paste", systemImage: "doc.on.clipboard")
+                    .frame(minWidth: 80)
             }
             .buttonStyle(.bordered)
+            .controlSize(.regular)
 
             Button(action: decrypt) {
                 Label("Decrypt", systemImage: "lock.open.fill")
+                    .frame(minWidth: 100)
             }
             .buttonStyle(.borderedProminent)
+            .controlSize(.regular)
             .disabled(inputText.isEmpty || selectedKey == nil || passphrase.isEmpty)
 
             if !outputText.isEmpty {
                 Button(action: copyToClipboard) {
                     Label("Copy Result", systemImage: "doc.on.doc")
+                        .frame(minWidth: 100)
                 }
                 .buttonStyle(.bordered)
+                .controlSize(.regular)
             }
         }
     }

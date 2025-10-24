@@ -94,10 +94,9 @@ struct EncryptView: View {
                 Picker("Recipient", selection: $selectedRecipient) {
                     Text("Select a recipient...").tag(nil as PGPKeyPair?)
                     ForEach(keyManager.encryptionKeys) { key in
-                        HStack {
-                            Text(key.statusEmoji)
-                            Text(key.nickname)
-                        }.tag(key as PGPKeyPair?)
+                        // Show emoji + name as a single text for proper display in Picker
+                        Text("\(key.statusEmoji) \(key.nickname)")
+                            .tag(key as PGPKeyPair?)
                     }
                 }
                 .labelsHidden()
@@ -108,30 +107,38 @@ struct EncryptView: View {
     // MARK: - Action Buttons
 
     private var actionButtons: some View {
-        HStack {
+        HStack(spacing: 8) {
             Button(action: clearAll) {
                 Label("Clear", systemImage: "xmark.circle")
+                    .frame(minWidth: 80)
             }
             .buttonStyle(.bordered)
+            .controlSize(.regular)
 
             Spacer()
 
             Button(action: pasteFromClipboard) {
                 Label("Paste", systemImage: "doc.on.clipboard")
+                    .frame(minWidth: 80)
             }
             .buttonStyle(.bordered)
+            .controlSize(.regular)
 
             Button(action: encrypt) {
                 Label("Encrypt", systemImage: "lock.fill")
+                    .frame(minWidth: 100)
             }
             .buttonStyle(.borderedProminent)
+            .controlSize(.regular)
             .disabled(inputText.isEmpty || selectedRecipient == nil)
 
             if !outputText.isEmpty {
                 Button(action: copyToClipboard) {
                     Label("Copy Result", systemImage: "doc.on.doc")
+                        .frame(minWidth: 100)
                 }
                 .buttonStyle(.bordered)
+                .controlSize(.regular)
             }
         }
     }
