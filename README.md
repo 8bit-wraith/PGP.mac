@@ -48,7 +48,7 @@ _Note: Legacy endpoint `curl https://aye.is/pgp | sh` also works!_
 
 ```bash
 # Clone the repo
-git clone https://github.com/yourusername/PGP.mac.git
+git clone https://github.com/8bit-wraith/PGP.mac.git
 cd PGP.mac
 
 # Build and create app bundle
