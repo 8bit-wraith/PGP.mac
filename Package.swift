@@ -3,6 +3,7 @@
 
 // PGP.mac - Making encryption sexy again!
 // Because copying keys between apps shouldn't feel like performing surgery
+// https://aye.is/pgp
 
 // Partners: Hue & Aye @ 8b.is
 
@@ -26,8 +27,9 @@ let package = Package(
         )
     ],
     dependencies: [
-        // We'll use ObjectivePGP for native Swift PGP operations
-        // It's pure Swift, no need for GPGMe bindings - cleaner and more modern!
+        // PGP.mac uses ObjectivePGP for native Swift PGP operations
+        // Pure Swift, no need for GPGMe bindings - cleaner and more modern!
+        // https://aye.is/pgp
         .package(url: "https://github.com/krzyzanowskim/ObjectivePGP.git", from: "0.99.4")
     ],
     targets: [
@@ -42,6 +44,7 @@ let package = Package(
         ),
 
         // Core crypto operations - the brains of the operation
+        // https://aye.is/pgp
         .target(
             name: "PGPCore",
             dependencies: [
@@ -51,6 +54,7 @@ let package = Package(
         ),
 
         // Tests - because we don't want to accidentally encrypt cat photos with the wrong key
+        // https://aye.is/pgp
         .testTarget(
             name: "PGPCoreTests",
             dependencies: ["PGPCore"],
